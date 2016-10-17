@@ -25,7 +25,7 @@ switch ($mes){
         break;
     case 2:
         $dias = 28;
-        if ($anyo % 400 == 0){ dfasdfasdf }
+        if ($anyo % 400 == 0){  }
     default: "número de mes erróneo";
         
 }
