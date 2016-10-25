@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="alert alert-info" role="alert">
+                            <h2>Alta de Clientes</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+            <form action="altaCliente.php" method="post" >
+                <div class="input-group">
+                    <div class="form-group row">
+                        <label for="nif" class="col-sm-2 col-form-label">NIF </label> 
+                        <div class="col-sm-3">
+                            <input type="text" name="nif" class="form-control" placeholder="Introduce nif">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="form-group row">
+                        <label for="nombre" class="col-sm-2 col-form-label">nombre</label> 
+                        <div class="col-sm-3">
+                            <input type="text" name="nombre" class="form-control" placeholder="Introduce nombre"> 
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="apellidos" class="col-sm-2 col-form-label">apellidos</label> 
+                        <div class="col-sm-3">
+                            <input type="text" name="apellidos" class="form-control" placeholder="Introduce apellidos">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label" >email </label> 
+                    <div class="col-sm-3">
+                        <input type="text" name="email" class="form-control" placeholder="Introduce apellidos">
+                    </div>
+                </div>
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-2">Sexo</legend>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" name="sexo" value="Hombre" class="form-check-input" checked> Varón
+                            </label>
+                            <label class="form-check-label">
+                                <input type="radio" name="sexo" value="Mujer" class="form-check-input"> Mujer
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label class="col-sm-2">Ocupación</label>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <label class="form-check-label"> 
+                                <input type="checkbox" name="ocupacion" value="estudia" class="form-check-input"> Estudia
+                            </label>
+                            <label class="form-check-label">
+                                <input type="checkbox" name="ocupacion" value="trabaja" class="form-check-input" > Trabaja 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="provincia" class="col-sm-2 col-form-label">provincia </label> 
+                    <div class="col-sm-3">
+                        <select name="provincia" class="form-control" >
+                            <option value="València" selected>València</option>
+                            <option value="Castelló" >Castelló</option>
+                            <option value="Alacant">Alacant</option>
+                            <option value="Otra">Otra</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"> Guardar </button>
+                <a href="listadoClientes.php" class="offset-md-2"> Ver Clientes </a>
+            </form>
+        </div>
+    </body>
+</html>
