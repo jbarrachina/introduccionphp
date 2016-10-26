@@ -17,13 +17,13 @@
             <?php
             if (isset($_POST['euros']))
             {  
-                $monedero=[500,200,100,50,20,10,5,2,1,0.5,0.2,0.1];
-                $euros = $_POST['euros'];
+                $monedero=[500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01];
+                $euros = $_POST['euros']*100;
                 $i=0;
                 while ($euros>0){
-                    $cantidad = intdiv($euros, $monedero[$i]);
-                    $euros = $euros%$monedero[$i];
-                    echo "$cantidad billetes/monedas de ",$monedero[$i],"<br>";
+                    $cantidad = intdiv($euros, $monedero[$i]*100);
+                    $euros = $euros%($monedero[$i]*100);
+                    echo $euros/100," $cantidad billetes/monedas de ",$monedero[$i],"<br>";
                     $i++;
                 }
             }
