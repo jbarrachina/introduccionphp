@@ -30,8 +30,8 @@ and open the template in the editor.
                     <input id="cemail" type="email" name="email" required>
                 </p>
                 <p>
-                    <label for="curl">URL (opcional)</label>
-                    <input id="curl" type="url" name="url">
+                    <label for="cnif">NIF (opcional)</label>
+                    <input id="cnif"  name="nif">
                 </p>
                 <p>
                     <label for="ccomment">Comentario (requerido)</label>
@@ -44,9 +44,39 @@ and open the template in the editor.
         </form>
         <div id="ok"></div>
         <script>
+
+
+            function esNIF(value) {
+                var referencia = 'TRWAGMYFPDXBNJZSQVHLCKE';
+                var letra = value.substring(value.length - 1);
+                var numero = parseInt(value.substring(0, value.length - 1));
+                if (referencia.charAt(numero % 23) === letra) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            jQuery.validator.addMethod("esnif", esNIF, "No es un NIF válido");
+
             $("#commentForm").validate({
                 submitHandler: function (form) {
-                  form.submit();
+                    var dataString = 'nombre=' + $('#cname').val() + '&email=' + $('#cemail').val() + '&nif=' + $('#cnif').val();
+                    $.ajax({
+                        type: "POST",
+                        url: "leerFicha.php",
+                        data: dataString,
+                        success: function (data) {
+                            $("#ok").html(data);
+                            $("#ok").show();
+                            //$("#commentForm").hide();
+                        }
+                    });
+                },
+                rules: {
+                    nif: {
+                        esnif: true
+                    }
                 }
             });
         </script>
