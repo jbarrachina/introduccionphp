@@ -54,5 +54,9 @@ class Fibonacci {
     function getElemento($num){
         return $this->serie[$num-1];
     }
+    
+    function getAureo(){
+        return $this->serie[$this->getLimite()-1]/$this->serie[$this->getLimite()-2];
+    }
 
 }
