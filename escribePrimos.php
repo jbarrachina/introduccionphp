@@ -16,7 +16,7 @@ function esprimo($num) {
     if ($divisor > 0) {
         return FALSE; //no es primo, he encontrado un divisor
     } else {
-        return TRUE; //no tien divisor
+        return TRUE; //no tiene divisor
     }
 }
 
