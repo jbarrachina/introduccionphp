@@ -12,6 +12,8 @@
  * serie de Fibonacci
  */
 
+include "Fibonacci.php";
+
 function fibonacci($num){
     $fibo = [];
     if($num>0){
@@ -41,3 +43,23 @@ echo "<br>";
 for($i=0;$i<count($f);$i++){
     echo $f[$i],"-";
 }
+echo "<br>";
+
+$serie = new Fibonacci(40);
+
+foreach ($serie->getSerie() as $elemento){
+    echo $elemento,"-";
+}
+
+echo "<br>";
+
+echo "Elemento 20 es ",$serie->getElemento(20)," " ,$serie->getLimite(),"<br>";
+echo $serie->inSerie(50)? "está " : "no está ";
+echo $serie->inSerie(150)? "está " : "no está ";
+echo $serie->inSerie(4181)?  "está " :  "no está ";
+echo $serie->inSerie(121393)? "está " :  "no está ";
+
+echo "<br>";
+   
+echo "El número aureo es: ",$serie->getAureo();
+
