@@ -15,8 +15,9 @@ include "conexion.php";
 $idPedido = $_GET['idPedido'];
 
 $sql = <<< SQL
-    select idProducto, cantidad, precioE
+    select producto.nombreProd as nombreProd, cantidad, detalle_pedido.precioE as precioE
         from detalle_pedido
+        left join producto ON producto.idProducto=detalle_pedido.idProducto
         where idPedido=? 
 SQL;
 //echo $sql;
@@ -33,14 +34,14 @@ if ($sentencia->errno){
     die("Error al ejecutar: ".$sentencia->error);
 }
 //ejecutada con éxito
-$sentencia->bind_result($idProducto, $cantidad, $precioE);
+$sentencia->bind_result($nombrePro, $cantidad, $precioE);
 $i=1;
 while ($sentencia->fetch()){
     //en $id, $cod, ... estan los valores de los campos
     ?>
         <div class="row <?php echo $i%2==0 ? 'bg-warning':'';?> ">
-             <div class="col-md-1">
-                <?php echo $idProducto;?>
+             <div class="col-md-4">
+                <?php echo $nombrePro;?>
             </div>
             <div class="col-md-1">
                     <?php echo $cantidad; ?>
