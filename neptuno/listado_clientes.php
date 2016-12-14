@@ -1,7 +1,8 @@
 
 
 <?php
-
+session_start();
+$_SESSION['titulo']='Listado de Clientes';
 include "conexion.php";
 include "cabecera.php";
 $sql = <<< SQL

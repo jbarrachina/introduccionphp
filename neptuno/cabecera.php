@@ -10,6 +10,9 @@
                 <div class="col-md-4">
                     <img src="https://campus.ausiasmarch.net/pluginfile.php/1/theme_bcu/logo/1476611002/logo_blanco.png">
                 </div>
+                <div class="col-md-6">
+                    <h2><?php echo $_SESSION['titulo'];?></h2>
+                </div>
             </div>
 
 

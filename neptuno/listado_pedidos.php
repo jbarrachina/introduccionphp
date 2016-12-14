@@ -1,6 +1,7 @@
 
 <?php
-
+session_start();
+$_SESSION['titulo']='Listado de Pedidos';
 include "conexion.php";
 include "cabecera.php";
 
